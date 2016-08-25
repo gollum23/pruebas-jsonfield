@@ -3,7 +3,6 @@ services:
   jsonfield:
     image: platzi/jsonfield-dev
     volumes:
-      - ~/.ssh/id_rsa.pub:/tmp/authorized_keys/id_rsa.pub
       - ../../project:/app/project
     ports:
       - "8000:8000"
