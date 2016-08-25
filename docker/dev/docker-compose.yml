@@ -1,0 +1,28 @@
+version: '2'
+services:
+  jsonfield:
+    image: platzi/jsonfield-dev
+    volumes:
+      - ~/.ssh/id_rsa.pub:/tmp/authorized_keys/id_rsa.pub
+      - ../../project:/app/project
+    ports:
+      - "8000:8000"
+    depends_on:
+      - jsonfield-postgresql
+    networks:
+      - jsonfield
+  jsonfield-postgresql:
+    image: postgres
+    container_name: jsonfield-postgresql
+    environment:
+      - POSTGRES_PASSWORD=platzi
+      - POSTGRES_DB=jsonfield
+    networks:
+      jsonfield:
+        aliases:
+          - jsonfield-postgresql
+    volumes:
+      - /data/pgsql-jsonfield:/var/lib/postgresql/data
+networks:
+   jsonfield:
+     external: true

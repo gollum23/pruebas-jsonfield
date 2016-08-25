@@ -1,0 +1,14 @@
+Django==1.9.8
+django-filter==0.13.0
+django-autoslug==1.9.3
+django-extensions==1.6.1
+djangorestframework==3.4.0
+factory-boy==2.6.1
+fake-factory==0.5.7
+psycopg2==2.6.1
+pytz==2016.4
+six==1.10.0
+wheel==0.29.0
+redis==2.10.5
+celery==3.1.23
+raven==5.21.0
